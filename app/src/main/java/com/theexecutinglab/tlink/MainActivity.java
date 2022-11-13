@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 String musicLink = jsonObject1.getString("uri");
                 Log.d("Link", musicLink);
 
-                DownloadManager.Request request =new DownloadManager.Request(Uri.parse(hqVideo));
+                DownloadManager.Request request =new DownloadManager.Request(Uri.parse(musicLink));
                 request.setTitle("File download.");
                 request.setDescription("File downloading...");
                 request.allowScanningByMediaScanner();

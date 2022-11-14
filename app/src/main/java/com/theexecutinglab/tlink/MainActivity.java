@@ -1,32 +1,23 @@
 package com.theexecutinglab.tlink;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DownloadManager;
-import android.content.Context;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.button.MaterialButton;
 import com.theexecutinglab.tlink.utlis.Constants;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,9 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
     EditText editText;
     MaterialButton materialButton;
-
-    DownloadManager manager;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,8 +62,6 @@ public class MainActivity extends AppCompatActivity {
                 String musicLink = jsonObject1.getString("uri");
                 Log.d("Link", musicLink);
 
-
-                //download
                 DownloadManager.Request request =new DownloadManager.Request(Uri.parse(musicLink));
                 request.setTitle("File download.");
                 request.setDescription("File downloading...");

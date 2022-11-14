@@ -3,6 +3,7 @@ package com.theexecutinglab.tlink;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DownloadManager;
+import android.content.Context;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -34,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
 
     EditText editText;
     MaterialButton materialButton;
+
+    DownloadManager manager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
                 String musicLink = jsonObject1.getString("uri");
                 Log.d("Link", musicLink);
 
+
+                //download
                 DownloadManager.Request request =new DownloadManager.Request(Uri.parse(musicLink));
                 request.setTitle("File download.");
                 request.setDescription("File downloading...");

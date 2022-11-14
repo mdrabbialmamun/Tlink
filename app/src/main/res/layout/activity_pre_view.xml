@@ -6,11 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".PreView">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_centerInParent="true"
-        android:textSize="18sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+    <include
+        layout="@layout/dialog_item"/>
 </RelativeLayout>
